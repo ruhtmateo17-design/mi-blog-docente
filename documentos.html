@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Documentos — Aula Abierta</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;family=Literata:wght@600;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{--primary:#000922;--pc:#0f2042;--secondary:#006398;--surface:#f7f9fb;--card:#fff;--muted:#45464e;--line:#e0e3e5;--err:#ba1a1a;}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:"Source Sans 3",sans-serif;background:var(--surface);color:#191c1e;min-height:100dvh;}
+  .material-symbols-outlined{font-family:"Material Symbols Outlined";font-weight:400;font-style:normal;line-height:1;display:inline-block;font-size:22px;}
+  header.fixed{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(247,249,251,.9);backdrop-filter:blur(14px);}
+  .hbar{height:64px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .hleft{display:flex;align-items:center;gap:10px;min-width:0}
+  .hleft img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0}
+  .hname{display:flex;align-items:center;gap:6px;min-width:0}
+  .hname span.n{font-weight:600;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hsub{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.05em}
+  .hbtn{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--secondary);text-decoration:none;background-color:#e6e8ea}
+  main{padding:80px 16px calc(96px + env(safe-area-inset-bottom,0px))}
+  h1{font-family:Literata,serif;font-size:26px;margin:8px 0 4px}
+  .lead{color:var(--muted);font-size:14px;margin:0 0 16px}
+  .tools{display:flex;gap:10px;margin-bottom:14px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 16px;border-radius:12px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit;color:#fff;background-color:var(--pc);border:0}
+  .btn.sec{background-color:#e6e8ea;color:var(--secondary)}
+  .btn.sm{padding:8px 12px;font-size:13px;border-radius:10px}
+  .btn.danger{background-color:var(--err)}
+  .search{flex:1;min-width:0;padding:12px 14px;border:1.5px solid #c5c6cf;border-radius:12px;font-size:15px;font-family:inherit;background:#fff}
+  .drop{border:2px dashed #b6c6f1;border-radius:16px;padding:18px;text-align:center;color:var(--muted);background:#fff;margin-bottom:14px;font-size:14px}
+  .drop.over{background:#d9e2ff;border-color:var(--secondary)}
+  .stats{font-size:13px;color:var(--muted);margin:0 0 10px;font-weight:600}
+  .doc{background:var(--card);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 8px -2px rgba(15,32,66,.10)}
+  .dtop{display:flex;gap:12px;align-items:flex-start}
+  .ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff}
+  .dinfo{min-width:0;flex:1}
+  .dname{font-weight:700;font-size:16px;word-break:break-word;line-height:1.25}
+  .dmeta{font-size:12px;color:var(--muted);margin-top:3px}
+  .dact{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .empty{text-align:center;color:var(--muted);padding:40px 10px}
+  .empty .material-symbols-outlined{font-size:48px;color:#b6c6f1}
+  .note{font-size:12px;color:var(--muted);background:#eceef0;border-radius:10px;padding:10px 12px;margin-top:8px}
+  nav.fixed{position:fixed;left:0;right:0;bottom:0;z-index:50;padding-bottom:env(safe-area-inset-bottom,0px);background:rgba(247,249,251,.95);backdrop-filter:blur(14px)}
+  nav .row{display:flex;justify-content:space-around;align-items:center;height:64px;padding:0 4px}
+  nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;width:56px;height:56px;text-decoration:none;color:var(--muted);font-size:11px;font-weight:700}
+  nav a.text-secondary{color:var(--secondary)}
+</style>
+</head>
+<body data-auto-profile>
+
+<header class="fixed">
+  <div class="hbar">
+    <div class="hleft">
+      <img data-tp="photo" src="foto-perfil.jpg" alt="Foto de perfil"/>
+      <div style="min-width:0">
+        <div class="hname"><span class="n" data-tp="titleName">Lic. Ruht Mateo</span></div>
+        <div class="hsub">Aula Abierta • Documentos</div>
+      </div>
+    </div>
+    <a class="hbtn" href="index.html" title="Ver blog público"><span class="material-symbols-outlined" style="font-size:20px">open_in_new</span></a>
+  </div>
+</header>
+
+<main>
+  <h1>Mis documentos</h1>
+  <p class="lead">Sube, renombra, descarga o elimina los documentos que necesites.</p>
+
+  <div class="tools">
+    <input class="search" id="search" type="search" placeholder="Buscar documento…"/>
+    <button class="btn" id="btn-add" type="button"><span class="material-symbols-outlined" style="font-size:20px">upload_file</span>Agregar</button>
+  </div>
+  <input id="file-input" type="file" multiple style="display:none"/>
+
+  <div class="drop" id="drop">Arrastra archivos aquí o pulsa <strong>Agregar</strong>. PDF, Word, Excel, PowerPoint, imágenes… (máx. 25 MB cada uno)</div>
+
+  <p class="stats" id="stats"></p>
+  <div id="list"></div>
+
+  <div class="note">Los documentos se guardan en este dispositivo y navegador. Si cambias de equipo o borras los datos del navegador, descárgalos antes para tener respaldo.</div>
+</main>
+
+<nav class="fixed"><div class="row">
+  <a href="panel.html"><span class="material-symbols-outlined">dashboard</span><span>Panel</span></a>
+  <a href="gestion.html"><span class="material-symbols-outlined">article</span><span>Artículos</span></a>
+  <a href="documentos.html" class="text-secondary"><span class="material-symbols-outlined">folder_open</span><span>Docs</span></a>
+  <a href="biblioteca.html"><span class="material-symbols-outlined">photo_library</span><span>Medios</span></a>
+  <a href="moderacion.html"><span class="material-symbols-outlined">rate_review</span><span>Moderación</span></a>
+</div></nav>
+
+<script src="db.js"></script>
+<script src="profile-loader.js"></script>
+<script>
+(function () {
+  const db = window.AulaAbiertaDB;
+  const PREFIX = 'doc:';
+  const MAX_BYTES = 25 * 1024 * 1024;
+  const listEl = document.getElementById('list');
+  const statsEl = document.getElementById('stats');
+  const searchEl = document.getElementById('search');
+  const fileInput = document.getElementById('file-input');
+  const drop = document.getElementById('drop');
+  let docs = [];
+
+  const toast = (m, t) => window.showToast ? window.showToast(m, t) : alert(m);
+
+  function fmtSize(b) {
+    if (b < 1024) return b + ' B';
+    if (b < 1024 * 1024) return (b / 1024).toFixed(0) + ' KB';
+    return (b / 1024 / 1024).toFixed(1) + ' MB';
+  }
+  function fmtDate(ts) {
+    return new Date(ts).toLocaleDateString('es-DO', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+  function kind(d) {
+    const ext = (d.name.split('.').pop() || '').toLowerCase();
+    if (ext === 'pdf') return ['picture_as_pdf', '#c0392b'];
+    if (['doc', 'docx', 'odt', 'rtf', 'txt'].includes(ext)) return ['description', '#2563eb'];
+    if (['xls', 'xlsx', 'csv', 'ods'].includes(ext)) return ['table_chart', '#16a34a'];
+    if (['ppt', 'pptx', 'odp'].includes(ext)) return ['slideshow', '#ea580c'];
+    if ((d.type || '').startsWith('image/')) return ['image', '#7c3aed'];
+    if (['zip', 'rar', '7z'].includes(ext)) return ['folder_zip', '#64748b'];
+    return ['draft', '#475569'];
+  }
+
+  async function load() {
+    const all = await db.getAll('settings');
+    docs = all.filter(x => x.key && x.key.startsWith(PREFIX)).sort((a, b) => b.createdAt - a.createdAt);
+    render();
+  }
+
+  function render() {
+    const q = searchEl.value.trim().toLowerCase();
+    const shown = docs.filter(d => !q || d.name.toLowerCase().includes(q));
+    const total = docs.reduce((s, d) => s + (d.size || 0), 0);
+    statsEl.textContent = docs.length + (docs.length === 1 ? ' documento' : ' documentos') + ' • ' + fmtSize(total);
+
+    if (!shown.length) {
+      listEl.innerHTML = '<div class="empty"><span class="material-symbols-outlined">folder_open</span><p>' +
+        (docs.length ? 'No hay documentos con ese nombre.' : 'Aún no has agregado documentos.') + '</p></div>';
+      return;
+    }
+    listEl.innerHTML = shown.map(d => {
+      const [icon, color] = kind(d);
+      return '<div class="doc" data-key="' + escapeHTML(d.key) + '">' +
+        '<div class="dtop"><div class="ico" style="background:' + color + '"><span class="material-symbols-outlined">' + icon + '</span></div>' +
+        '<div class="dinfo"><div class="dname">' + escapeHTML(d.name) + '</div>' +
+        '<div class="dmeta">' + fmtSize(d.size || 0) + ' • ' + fmtDate(d.createdAt) + '</div></div></div>' +
+        '<div class="dact">' +
+        '<button type="button" class="btn sm" data-act="download"><span class="material-symbols-outlined" style="font-size:18px">download</span>Descargar</button>' +
+        '<button type="button" class="btn sm sec" data-act="rename"><span class="material-symbols-outlined" style="font-size:18px">edit</span>Renombrar</button>' +
+        '<button type="button" class="btn sm danger" data-act="delete"><span class="material-symbols-outlined" style="font-size:18px">delete</span>Eliminar</button>' +
+        '</div></div>';
+    }).join('');
+  }
+
+  async function addFiles(files) {
+    let added = 0;
+    for (const f of files) {
+      if (f.size > MAX_BYTES) { toast('"' + f.name + '" supera 25 MB y no se agregó', 'error'); continue; }
+      try {
+        await db.put('settings', {
+          key: PREFIX + Date.now() + '-' + Math.random().toString(36).slice(2, 7),
+          name: f.name,
+          type: f.type || '',
+          size: f.size,
+          createdAt: Date.now(),
+          blob: f
+        });
+        added++;
+      } catch (e) {
+        toast('No se pudo guardar "' + f.name + '": ' + e.message, 'error');
+      }
+    }
+    if (added) toast(added + (added === 1 ? ' documento agregado' : ' documentos agregados'), 'success');
+    await load();
+  }
+
+  function download(d) {
+    const url = URL.createObjectURL(d.blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = d.name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }
+
+  async function rename(d) {
+    const input = prompt('Nuevo nombre del documento:', d.name);
+    if (input === null) return;
+    let name = input.trim().replace(/[\\/:*?"<>|]/g, '-');
+    if (!name) return;
+    const oldExt = d.name.includes('.') ? d.name.split('.').pop() : '';
+    if (oldExt && !name.includes('.')) name += '.' + oldExt;
+    d.name = name;
+    await db.put('settings', d);
+    toast('Nombre actualizado', 'success');
+    await load();
+  }
+
+  async function remove(d) {
+    if (!confirm('¿Eliminar "' + d.name + '"? Esta acción no se puede deshacer.')) return;
+    await db.delete('settings', d.key);
+    toast('Documento eliminado', 'info');
+    await load();
+  }
+
+  listEl.addEventListener('click', e => {
+    const btn = e.target.closest('button[data-act]');
+    if (!btn) return;
+    const key = btn.closest('.doc').dataset.key;
+    const d = docs.find(x => x.key === key);
+    if (!d) return;
+    const act = btn.dataset.act;
+    if (act === 'download') download(d);
+    else if (act === 'rename') rename(d);
+    else if (act === 'delete') remove(d);
+  });
+
+  document.getElementById('btn-add').addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', () => { if (fileInput.files.length) addFiles(Array.from(fileInput.files)); fileInput.value = ''; });
+  searchEl.addEventListener('input', render);
+
+  ['dragenter', 'dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
+  ['dragleave', 'drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
+  drop.addEventListener('drop', e => { if (e.dataTransfer.files.length) addFiles(Array.from(e.dataTransfer.files)); });
+
+  load();
+})();
+</script>
+</body></html>
